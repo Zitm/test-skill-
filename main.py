@@ -1,6 +1,6 @@
 import os
 from pydantic import BaseModel
-
+from func import Prime 
 
 
 
@@ -32,17 +32,13 @@ class Dictionary(BaseModel):
     вхождений: int
     делители: list
 
-def constr(n,p,o,m):
+def constr(p,o,m):
     temp=Dictionary(простое=p,вхождений=o,делители=m)
     return temp.model_dump()
 
 print(constr(30,True,5,[1,2,3,4,54]))
 
-def Prime(num):
-    t=2
-    while num%t!=0:
-        t+=1
-    return t==num
+
  
 def Div(num):
     div=[]

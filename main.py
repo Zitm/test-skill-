@@ -16,7 +16,6 @@ print(divisor(5))
 
 print(Dictionary.constr(True,5,[1,2,3,4,54]))
 
-
 d=input("vvod ")
 
 

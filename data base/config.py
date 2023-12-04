@@ -1,4 +1,4 @@
-import pydantic_settings
+from pydantic_settings import BaseSettings,SettingsConfigDict
 
 class Settings(BaseSettings):
     DB_Host: str
@@ -10,3 +10,7 @@ class Settings(BaseSettings):
     @property
     def DATABASE_URL (self):
         return f"postgresql+pycopg://{self.DB_USER}:{self.DP_PASS}@{self.DB_Host}:{self.DP_PORT}/{self.DB_NAME}"
+    
+    model_config=SettingsConfigDict(env_file=".env")
+
+settings=Settings()
